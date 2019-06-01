@@ -274,17 +274,17 @@ Runner.prototype = {
    */
   loadSounds: function() {
     if (!IS_IOS) {
-      this.audioContext = new AudioContext();
+    //   this.audioContext = new AudioContext();
 
-      var resourceTemplate =
-          document.getElementById(this.config.RESOURCE_TEMPLATE_ID).content;
+    //   var resourceTemplate =
+    //       document.getElementById(this.config.RESOURCE_TEMPLATE_ID).content;
 
-      for (var sound in Runner.sounds) {
-        var soundSrc = document.getElementById(Runner.sounds[sound]);
-        this.soundFx[sound] = soundSrc;
-      }
+    //   for (var sound in Runner.sounds) {
+    //     var soundSrc = document.getElementById(Runner.sounds[sound]);
+    //     this.soundFx[sound] = soundSrc;
+    //   }
 
-      console.log(this.soundFx);
+    //   console.log(this.soundFx);
     }
   },
 
@@ -466,6 +466,8 @@ Runner.prototype = {
   clearCanvas: function() {
     this.canvasCtx.clearRect(0, 0, this.dimensions.WIDTH,
         this.dimensions.HEIGHT);
+    this.canvasCtx.fillStyle = '#fff';
+    this.canvasCtx.fillRect(0, 0, this.canvas.width, this.canvas.height);
   },
 
   /**
@@ -802,9 +804,9 @@ Runner.prototype = {
    * @param {HTMLAudioElement} audioElement
    */
   playSound: function(audioElement) {
-    if (audioElement) {
-      audioElement.play();
-    }
+    // if (audioElement) {
+    //   audioElement.play();
+    // }
   },
 
   /**
