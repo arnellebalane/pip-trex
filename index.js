@@ -5,6 +5,8 @@ const canvas = document.querySelector('.runner-canvas');
 const audio = document.querySelector('audio');
 const video = document.createElement('video');
 video.srcObject = canvas.captureStream();
+video.muted = true;
+video.play();
 
 if (document.pictureInPictureEnabled) {
     function simulateSpacebar() {
@@ -31,9 +33,8 @@ if (document.pictureInPictureEnabled) {
     });
 
     button.addEventListener('click', async () => {
-        if (video.paused) {
+        if (audio.paused) {
             await audio.play();
-            await video.play();
         }
 
         if (document.pictureInPictureElement) {
