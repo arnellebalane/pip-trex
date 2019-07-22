@@ -44,6 +44,7 @@ if (document.pictureInPictureEnabled) {
         }
 
         simulateSpacebar();
+        button.blur();
     });
 
     navigator.mediaSession.setActionHandler('play', simulateSpacebar);
